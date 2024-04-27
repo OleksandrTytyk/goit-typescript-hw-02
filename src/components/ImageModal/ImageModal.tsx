@@ -1,10 +1,14 @@
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
+import { ImageProps } from "./ImageModalTypes";
 
-Modal.setAppElement(document.getElementById("root"));
 
-const ImageModal = ({ isOpen, closeModal, src, alt }) => {
-  const customStyles = {
+Modal.setAppElement("#root");
+
+
+const ImageModal = ({ isOpen, closeModal, src, alt }: ImageProps) => {
+  const customStyles: Modal.Styles = {
+    // Стили остаются неизменными
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.85)",
     },
@@ -41,3 +45,4 @@ const ImageModal = ({ isOpen, closeModal, src, alt }) => {
 };
 
 export default ImageModal;
+

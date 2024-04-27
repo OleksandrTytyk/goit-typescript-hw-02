@@ -1,6 +1,8 @@
-import css from "./ImageCard.module.css";
+import css from "./ImageCard.module.css"; 
+import { ImageCardProps } from "./ImageCardTypes";
 
-const ImageCard = ({ photo, openModal }) => {
+
+const ImageCard = ({ photo, openModal }: ImageCardProps) => {
   return (
     <div className={css.imgCard}>
       <img
@@ -13,3 +15,4 @@ const ImageCard = ({ photo, openModal }) => {
 };
 
 export default ImageCard;
+

@@ -3,12 +3,15 @@ import toast from "react-hot-toast";
 import { FaSearch } from "react-icons/fa";
 import css from "./SearchBar.module.css";
 
-const SearchBar = ({ onSearch }) => {
-  const handleSubmit = (values) => {
-    if (!values.query.trim()) {
-      return toast.error("Enter a search query");
-    }
+import { FC } from "react";
+import { SearchBarProps } from "./SearchBarTypes";
 
+const SearchBar: FC<SearchBarProps> = ({ onSearch }) => {
+  const handleSubmit = (values: { query: string }) => {
+    if (!values.query.trim()) {
+      toast.error("Enter a search query");
+      return;
+    }
     onSearch(values.query);
   };
   return (
